@@ -43,7 +43,10 @@
   padding: auto;
   text-align: center;
 }
-
+.inputform {
+  padding-left: 100px;
+  padding-right: 100px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

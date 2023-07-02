@@ -17,6 +17,7 @@ export default class App extends Component {
       state: "",
       zip: "",
       check: false,
+      switchBox: false
     };
   }
 
@@ -47,7 +48,7 @@ export default class App extends Component {
   //   copyData.splice(index, 1);
   //   this.setState({ data: copyData });
   // };
-
+  
   submitHandler = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -64,10 +65,13 @@ export default class App extends Component {
         city,
         state,
         zip,
-        check:true
+        check:true,
       }
     );
   };
+  switchHandler = () => {
+    this.setState({switchBox:!this.state.switchBox});
+  }
 
   render() {
     // const { check, data } = this.state;
@@ -95,7 +99,7 @@ export default class App extends Component {
               zip={this.state.zip}
             />
            : 
-            <InputForm submit = {this.submitHandler}/>
+            <InputForm submit = {this.submitHandler} switchHandler={this.switchHandler} switchBox={this.state.switchBox}/>
           }
         </div>
       </>
