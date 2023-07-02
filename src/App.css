@@ -28,6 +28,17 @@
   color: #61dafb;
 }
 
+.Form {
+  text-align: center;
+  padding: auto;
+}
+
+.inp {
+  padding: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

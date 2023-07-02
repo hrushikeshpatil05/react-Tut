@@ -4,7 +4,7 @@ import ClassBasedCom from "./Components/ClassBasedCom";
 import "./App.css"
 import FunctionBasedCom from "./Components/FunctionBasedCom";
 import axios from 'axios';
-
+import Form from './Form';
 
 export default class App extends Component {
   constructor(props){
@@ -37,12 +37,18 @@ export default class App extends Component {
     this.checkTime();
   }
 
+  removeHandler = (index) => {
+    const copyData = this.state.data;
+    copyData.splice(index,1);
+    this.setState({data:copyData});
+  }
+
   render() {
     const {check, data} = this.state;
 
-    if(!check){
-      return <h1>Wait...</h1>
-    }
+    // if(!check){
+    //   return <h1>Wait...</h1>
+    // }
     let person;
       person = this.state.data.map((item) => (
         <h3 key={item.id}>{item.title}</h3>
@@ -50,14 +56,13 @@ export default class App extends Component {
     return (
       
       <>
-      <div>
-      <div>
+      {/* <div>
         <button  id = "button"onClick={this.toggleHandler}>Toggole</button>
         {check === true ? person : ""}
-      </div>
-        {
-          person
-        }
+      </div> */}
+      <div>
+      {/* {person} */}
+      <Form/>
       </div>
       
       </>
